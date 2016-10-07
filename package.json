@@ -1,6 +1,6 @@
 {
   "name": "momy",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "MongoDB to MySQL replication",
   "main": "index.js",
   "bin": {
@@ -17,9 +17,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/cognitom/momy"
+    "url": "https://github.com/karlitxo/momy.git"
   },
-  "author": "Tsutomu Kawamura",
+  "author": "Tsutomu Kawamura - w/ TP changes",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^1.7.1"
