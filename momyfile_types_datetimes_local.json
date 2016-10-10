@@ -18,17 +18,17 @@
       "email": "string",
       "phone1": "string",
       "country_uid": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "address_types": {
       "uid": "string",
       "category": "string",
       "name": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "chart_groups": {
       "name": "string",
@@ -36,9 +36,9 @@
       "position": "string",
       "customer_id": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "uid": "string",
       "group_code_type_uid": "string",
       "customer_uid": "string",
@@ -63,9 +63,9 @@
       "sensor_type_uid": "string",
       "user_uid": "string",
       "group_code_type_uid": "string",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
-      "created_at": "DATE",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
+      "created_at": "DATETIME",
       "devices": "string"
     },
     "chart_types": {
@@ -75,16 +75,16 @@
       "name": "string",
       "code": "string",
       "user_uid": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "counters": {
       "uid": "string",
       "seq": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "countries": {
       "uid": "string",
@@ -93,24 +93,24 @@
       "code": "string",
       "continent": "string",
       "region": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "crop_types": {
       "uid": "string",
       "category": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "customer_types": {
       "uid": "string",
       "category": "string",
       "name": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "device_types": {
       "uid": "string",
@@ -119,9 +119,9 @@
       "name": "string",
       "depths": "string",
       "user_uid": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "group_code_types": {
       "uid": "string",
@@ -131,9 +131,9 @@
       "code": "string",
       "aggr": "string",
       "user_uid": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "languages": {
       "uid": "string",
@@ -142,9 +142,9 @@
       "name": "string",
       "code": "string",
       "user_uid": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "note_types": {
       "uid": "string",
@@ -153,17 +153,17 @@
       "name": "string",
       "code": "string",
       "user_uid": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "plan_types": {
       "uid": "string",
       "category": "string",
       "name": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "probe_types": {
       "uid": "string",
@@ -172,9 +172,9 @@
       "name": "string",
       "depths": "string",
       "user_uid": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "sensor_types": {
       "uid": "string",
@@ -189,9 +189,9 @@
       "decimal_places": "string",
       "sensors_codes": "string",
       "user_uid": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "soil_types": {
       "uid": "string",
@@ -202,9 +202,9 @@
       "wilting_point": "string",
       "available_water_content": "string",
       "user_uid": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "unit_system_types": {
       "uid": "string",
@@ -212,9 +212,9 @@
       "user_id": "string",
       "name": "string",
       "code": "string",
-      "deleted_at": "DATE",
-      "updated_at": "DATE",
-      "created_at": "DATE"
+      "deleted_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "created_at": "DATETIME"
     },
     "sensors": {
       "uid": "string",
@@ -227,9 +227,9 @@
       "ch": "string",
       "code": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "unit": "string",
       "device_uid": "string",
       "user_uid": "string"
@@ -244,9 +244,9 @@
       "key": "string",
       "customer_id": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "device_type_uid": "string",
       "probe_type_uid": "string",
       "customer_uid": "string",
@@ -259,13 +259,13 @@
       "soil_id": "string",
       "crop_id": "string",
       "device_id": "string",
-      "start_date": "DATE",
-      "end_date": "DATE",
+      "start_date": "DATETIME",
+      "end_date": "DATETIME",
       "customer_id": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "irrigation_id": "string",
       "default_chart": "string",
       "chart_type_id": "string",
@@ -292,9 +292,9 @@
       "name": "string",
       "position": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "group_code_type_id": "string",
       "customer_uid": "string",
       "chart_group_uid": "string",
@@ -313,9 +313,9 @@
       "max_root_depth_days": "number",
       "irrigation_notes": "string",
       "field_notes": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "crop_uid": "string",
       "crop_type_uid": "string",
       "sector_uid": "string",
@@ -339,9 +339,9 @@
       "name": "string",
       "due_date": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "field_uid": "string",
       "note_type_uid": "string",
       "user_uid": "string"
@@ -354,9 +354,9 @@
       "amount": "number",
       "unit": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "customer_uid": "string",
       "field_uid": "string",
       "user_uid": "string"
@@ -368,9 +368,9 @@
       "name": "string",
       "irrigation_gift": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "customer_uid": "string",
       "irrigation_system_type_uid": "string",
       "user_uid": "string"
@@ -382,9 +382,9 @@
       "irrigation_gift": "string",
       "customer_id": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "irrigation_unit": "string",
       "irrigation_system_type_uid": "string",
       "customer_uid": "string",
@@ -397,9 +397,9 @@
       "group_code_type_id": "string",
       "position": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "icon": "string",
       "device_type_uid": "string",
       "group_code_type_uid": "string",
@@ -412,9 +412,9 @@
       "name": "string",
       "position": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "preset_chart_group_uid": "string",
       "chart_template_uid": "string",
       "user_uid": "string"
@@ -426,9 +426,9 @@
       "name": "string",
       "position": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "preset_chart_group_uid": "string",
       "chart_template_uid": "string",
       "user_uid": "string"
@@ -441,9 +441,9 @@
       "wilting_point": "string",
       "available_water_content": "string",
       "user_id": "string",
-      "created_at": "DATE",
-      "updated_at": "DATE",
-      "deleted_at": "DATE",
+      "created_at": "DATETIME",
+      "updated_at": "DATETIME",
+      "deleted_at": "DATETIME",
       "soil_type_id": "string",
       "soil_uid": "string",
       "user_uid": "string",
@@ -457,7 +457,7 @@
       "email": "string",
       "language": "string",
       "customer_id": "string",
-      "register_date": "DATE",
+      "register_date": "DATETIME",
       "is_admin": "number",
       "user_id": "string",
       "updated_at": "string"
