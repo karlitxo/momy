@@ -19,7 +19,7 @@
     "type": "git",
     "url": "https://github.com/karlitxo/momy.git"
   },
-  "author": "Tsutomu Kawamura - w/ TP changes",
+  "author": "TP",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^1.7.1"
