@@ -1,0 +1,111 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/6.2.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.8.9
+3 info using node@v6.2.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/karlitxo/momy',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/karlitxo/.npm/momy/0.5.1/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/karlitxo/.npm correctMkdir not in flight; initializing
+10 info lifecycle momy@0.5.1~prepublish: momy@0.5.1
+11 silly lifecycle momy@0.5.1~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/karlitxo/.npm/momy/0.5.1/package.tgz',
+12 verbose tar pack   '/Users/karlitxo/momy' ]
+13 verbose tarball /Users/karlitxo/.npm/momy/0.5.1/package.tgz
+14 verbose folder /Users/karlitxo/momy
+15 verbose addLocalTarball adding from inside cache /Users/karlitxo/.npm/momy/0.5.1/package.tgz
+16 verbose correctMkdir /Users/karlitxo/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd momy@0.5.1
+18 verbose afterAdd /Users/karlitxo/.npm/momy/0.5.1/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/karlitxo/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/karlitxo/.npm/momy/0.5.1/package/package.json written
+21 silly publish { name: 'momy',
+21 silly publish   version: '0.5.1',
+21 silly publish   description: 'MongoDB to MySQL replication',
+21 silly publish   main: 'index.js',
+21 silly publish   bin: { momy: './bin/momy.js' },
+21 silly publish   scripts: { test: 'eslint -c .eslintrc lib bin' },
+21 silly publish   dependencies:
+21 silly publish    { 'change-case': '^2.3.1',
+21 silly publish      moment: '^2.10.6',
+21 silly publish      mongodb: '^2.0.45',
+21 silly publish      mysql: '^2.9.0' },
+21 silly publish   repository: { type: 'git', url: 'git+https://github.com/karlitxo/momy.git' },
+21 silly publish   author: { name: 'Tsutomu Kawamura - w/ TP changes' },
+21 silly publish   license: 'MIT',
+21 silly publish   devDependencies: { eslint: '^1.7.1' },
+21 silly publish   readme: '# Momy\n\n[Momy](https://goo.gl/maps/s9hXxKyoACv) is a simple cli tool for replicating MongoDB to MySQL in realtime.\n\n- Enable SQL query on data in NoSQL database\n- Enable to be accessed by Excel / Access\n\n![Momy](images/concept.png)\n\n## Installation\n\n```bash\n$ npm install -g momy\n```\n\nor install it within the project locally:\n\n```bash\n$ npm install --save momy\n```\n\n## Preparation\n\n### MongoDB\n\nMomy uses [Replica Set](http://docs.mongodb.org/manual/replication/) feature in MongoDB. But you don\'t have to replicate between MongoDB actually. Just follow the steps below.\n\nStart a new mongo instance with no data:\n\n```bash\n$ mongod --replSet "rs0" --oplogSize 100\n```\n\nOpen another terminal, and go to MongoDB Shell:\n\n```bash\n$ mongo\n....\n> rs.initiate()\n```\n\n`rs.initiate()` command prepare the collections that is needed for replication.\n\n### MySQL\n\nLaunch MySQL instance, and create the new database to use. The tables will be created or updated when syncing. You\'ll see `mongo_to_mysql`, too. This is needed to store the information for syncing. (don\'t remove it)\n\n### Configuration\n\nCreate a new `momyfile.json` file like this:\n\n```json\n{\n  "src": "mongodb://localhost:27017/dbname",\n  "dist": "mysql://root@localhost:3306/dbname",\n  "prefix": "t_",\n  "case": "camel",\n  "collections": {\n    "collection1": {\n      "_id": "number",\n      "createdAt": "DATETIME",\n      "field1": "number",\n      "field2": "string",\n      "field3": "boolean",\n      "field4.subfield": "string"\n    },\n    "collection2": {\n      "_id": "string",\n      "createdAt": "DATETIME",\n      "field1": "number",\n      "field2": "string",\n      "field3": "boolean"\n    }\n  }\n}\n```\n\n- `src`: the URL of the MongoDB server\n- `dist`: the URL of the MySQL server\n- `prefix`: optional prefix for table name. The name of the table would be `t_collection1` in the example above.\n- `case`: optional. `snake` or `camel`\n- `collections`: set the collections and fields to sync\n\n`_id` field is required for each collection and should be `string` or `number`.\n\n### Field names and types\n\n```\n"<field_name>": "<field_tipe>"\n```\nor, field_name could be dot-concatenated:\n```\n"<field_name>.<sub_name>": "<field_tipe>"\n```\n\nFor example, if you have `{ a: { b: { c: \'hey!\' } } }` then `"a.b.c": "string"`\n\nCurrently these native types are supported:\n\n- `BIGINT`\n- `TINYINT`\n- `VARCHAR`\n- `DATE`\n- `DATETIME`\n- `TIME`\n\nThere\'re also some aliases:\n\n- `number` => `BIGINT`\n- `boolean` => `TINYINT`\n- `string` => `VARCHAR`\n\n## Usage\n\nAt the first run, we need to import all the data from MongoDB:\n\n```bash\n$ momy --config momyfile.json --import\n```\n\nThen start the daemon to streaming data:\n\n```bash\n$ momy --config momyfile.json\n```\n\nor\n\n```bash\n$ forever momy --config momyfile.json\n```\n\n## License\n\nMIT\n\nThis library was originally made by @doubaokun as [MongoDB-to-MySQL](https://github.com/doubaokun/MongoDB-to-MySQL) and rewritten by @cognitom.\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '08535bcb6f1739d4675a0e3d3afd058649f37fd9',
+21 silly publish   bugs: { url: 'https://github.com/karlitxo/momy/issues' },
+21 silly publish   homepage: 'https://github.com/karlitxo/momy#readme',
+21 silly publish   _id: 'momy@0.5.1',
+21 silly publish   _shasum: 'fd16ee3cc871536de9fa54677110e160d41046b2',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name momy
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'momy',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   name: 'momy',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/momy
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/karlitxo/.npm/momy/0.5.1/package.tgz
+30 verbose request uri https://registry.npmjs.org/momy
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 3:08:05 AM
+33 verbose request using bearer token for auth
+34 verbose request id 218d3794027525f0
+35 http request PUT https://registry.npmjs.org/momy
+36 http 403 https://registry.npmjs.org/momy
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '98',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Mon, 10 Oct 2016 02:08:06 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-cdg8734-CDG',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1476065285.438700,VS0,VE848',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /Users/karlitxo/.npm/registry.npmjs.org/momy on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: you do not have permission to publish "momy". Are you logged in as the correct user? : momy
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+40 verbose stack     at emitOne (events.js:101:20)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+41 verbose statusCode 403
+42 verbose pkgid momy
+43 verbose cwd /Users/karlitxo/momy
+44 error Darwin 14.5.0
+45 error argv "/usr/local/Cellar/node/6.2.0/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.2.0
+47 error npm  v3.8.9
+48 error code E403
+49 error you do not have permission to publish "momy". Are you logged in as the correct user? : momy
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
